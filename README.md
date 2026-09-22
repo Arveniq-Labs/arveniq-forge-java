@@ -11,6 +11,12 @@ It carries the same responsibilities as `arveniq-forge-sdk`:
 
 The SDK uses only the JDK. It has no JSON, web-framework, or reactive-runtime dependency.
 
+## Android is a separate mobile-safe module
+
+`forge-android/` is a standalone Kotlin-first Gradle library. It does not depend on this Maven server SDK and it does not accept a Forge Developer API key. Instead it calls a customer backend relay or the Forge mobile integration gateway using a short-lived end-user token and an opaque `ContextAssertion` issued by a trusted backend.
+
+The Android module includes a Kotlin `Flow` streaming API, lifecycle resume coordination, an Android Keystore-backed short-lived-token store, upload preparation, and push-token registration. The gateway is responsible for validating the user's authorization and resolving authoritative resource context. See `forge-android/README.md` and the versioned contract in `arveniq-forge-protocol`.
+
 ## Install
 
 ```xml

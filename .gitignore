@@ -5,4 +5,5 @@
 target/
 out/
 *.class
-
+.gradle/
+forge-android/**/build/
